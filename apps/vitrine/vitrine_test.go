@@ -46,6 +46,8 @@ func TestCodigosDeSaida(t *testing.T) {
 		codigo int
 	}{
 		{"sem LOJA_NOME", nil, saidaFalta},
+		{"produção sem segredo", []string{"LOJA_NOME", "x", "AMBIENTE", "producao", "API_URL", "http://api"}, saidaFalta},
+		{"produção sem api", []string{"LOJA_NOME", "x", "AMBIENTE", "producao", "SEGREDO_SESSAO", "s"}, saidaFalta},
 		{"porta texto", []string{"LOJA_NOME", "x", "PORTA", "http"}, saidaPorta},
 		{"portas iguais", []string{"LOJA_NOME", "x", "PORTA", "9090"}, saidaPorta},
 		{"atraso inválido", []string{"LOJA_NOME", "x", "ATRASO_INICIO", "40-20"}, saidaFormat},
@@ -135,5 +137,12 @@ func TestErrosProvocados(t *testing.T) {
 func TestSemAPI(t *testing.T) {
 	if c, _ := pedir(t, vitrineDeTeste(t).rotas(), "GET", "/api/status", ""); c != 503 {
 		t.Errorf("sem API_URL: %d", c)
+	}
+}
+
+func TestProducaoCompleta(t *testing.T) {
+	_, err := carregarConfig(ambiente("LOJA_NOME", "x", "AMBIENTE", "producao", "SEGREDO_SESSAO", "s", "API_URL", "http://api"))
+	if err != nil {
+		t.Errorf("produção completa recusada: %v", err)
 	}
 }

@@ -56,6 +56,15 @@ func carregarConfig(getenv func(string) string, ambiente []string) (config, erro
 	if c.nome == "" {
 		return c, errConfig(saidaFalta, "LOJA_NOME não definida: a vitrine não sabe de que loja é")
 	}
+	// Em produção, a sessão precisa de segredo próprio e o front precisa da api:
+	// subir sem eles daria uma loja que parece funcionar e falha no primeiro login.
+	if getenv("AMBIENTE") == "producao" {
+		for _, v := range []string{"SEGREDO_SESSAO", "API_URL"} {
+			if getenv(v) == "" {
+				return c, errConfig(saidaFalta, "%s não definida: obrigatória com AMBIENTE=producao", v)
+			}
+		}
+	}
 	for _, p := range []struct{ nome, valor string }{{"PORTA", c.porta}, {"PORTA_ADMIN", c.portaAdmin}} {
 		if p.valor == "" {
 			continue

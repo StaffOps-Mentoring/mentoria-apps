@@ -28,6 +28,8 @@ verify provoca o cenário: não ponha ela no Service.
 | Variável | Padrão | Para quê |
 |---|---|---|
 | `LOJA_NOME` | — **obrigatória** | sem ela, sai com código 3 |
+| `AMBIENTE` | — | `producao` torna `SEGREDO_SESSAO` e `API_URL` obrigatórias (sem uma delas, código 3) |
+| `SEGREDO_SESSAO` | — | obrigatória em produção; nunca aparece em rota nenhuma |
 | `LOJA_*` | — | qualquer uma aparece em `/config`, lida na partida |
 | `VERSAO` | a do build | o que `/version` responde |
 | `API_URL` | — | para onde `/api/` é repassado, com o caminho inteiro (`/api/status` chega como `/api/status`) |
@@ -85,7 +87,7 @@ Alpine com `curl`, `dig` e `nc`, como `nobody`. Sem argumentos, dorme: dá para 
 |---|---|---|
 | 1 | todas | não conseguiu escutar na porta |
 | 2 | todas | `PORTA` ou `PORTA_ADMIN` inválida, ou as duas iguais |
-| 3 | vitrine | `LOJA_NOME` ausente |
+| 3 | vitrine | `LOJA_NOME` ausente, ou `SEGREDO_SESSAO`/`API_URL` com `AMBIENTE=producao` |
 | 4 | api, cofre | banco inalcançável na partida; `DIR_DADOS` inutilizável |
 | 5 | vitrine | `ATRASO_INICIO` ou `DRENAGEM` mal escrito |
 
