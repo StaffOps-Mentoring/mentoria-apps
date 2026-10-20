@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1
 # Compila no estágio de build e entrega só o binário estático, sem shell e sem root.
 FROM --platform=$BUILDPLATFORM golang:1.26-alpine AS build
 WORKDIR /src
