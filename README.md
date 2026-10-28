@@ -2,7 +2,7 @@
 
 As apps da loja de lab da mentoria: o que os labs de **docker**, **pipelines** e **kubernetes**
 empacotam, publicam e rodam. Cada app mora em `apps/<nome>/`, com o próprio `go.mod` e
-`Dockerfile`, e o pipeline publica a imagem em `ghcr.io/karlipegomes/mentoria-apps/<nome>`,
+`Dockerfile`, e o pipeline publica a imagem em `ghcr.io/staffops-mentoring/mentoria-apps/staffops-<nome>`,
 para `linux/amd64` e `linux/arm64`.
 
 Os labs ficam no repositório da mentoria. Aqui fica só o que eles rodam. Os defeitos de cada lab
