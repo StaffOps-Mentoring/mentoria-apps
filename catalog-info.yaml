@@ -1,0 +1,85 @@
+# Backstage catalog: Domain (GitHub org) -> System (this repo) -> Component(s).
+# Names aligned with Dependency-Track (StaffOps/homelab-gitops helm-charts/argo-events/image-scan/catalog.yaml).
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: mentoria-apps
+  title: mentoria-apps
+  description: "mentoria-apps (StaffOps-Mentoring)"
+  annotations:
+    github.com/project-slug: StaffOps-Mentoring/mentoria-apps
+  links:
+    - url: https://github.com/StaffOps-Mentoring/mentoria-apps
+      title: Repository
+      icon: github
+spec:
+  owner: group:staffops-mentoring
+  domain: staffops-mentoring
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mentoria-apps-staffops-api
+  title: mentoria-apps/staffops-api
+  description: "Container image ghcr.io/staffops-mentoring/mentoria-apps/staffops-api"
+  annotations:
+    github.com/project-slug: StaffOps-Mentoring/mentoria-apps
+    staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-api
+    staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-api
+  tags: [container-image, go]
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:staffops-mentoring
+  system: mentoria-apps
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mentoria-apps-staffops-cofre
+  title: mentoria-apps/staffops-cofre
+  description: "Container image ghcr.io/staffops-mentoring/mentoria-apps/staffops-cofre"
+  annotations:
+    github.com/project-slug: StaffOps-Mentoring/mentoria-apps
+    staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-cofre
+    staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-cofre
+  tags: [container-image, go]
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:staffops-mentoring
+  system: mentoria-apps
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mentoria-apps-staffops-sonda
+  title: mentoria-apps/staffops-sonda
+  description: "Container image ghcr.io/staffops-mentoring/mentoria-apps/staffops-sonda"
+  annotations:
+    github.com/project-slug: StaffOps-Mentoring/mentoria-apps
+    staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-sonda
+    staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-sonda
+  tags: [container-image, go]
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:staffops-mentoring
+  system: mentoria-apps
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mentoria-apps-staffops-vitrine
+  title: mentoria-apps/staffops-vitrine
+  description: "Container image ghcr.io/staffops-mentoring/mentoria-apps/staffops-vitrine"
+  annotations:
+    github.com/project-slug: StaffOps-Mentoring/mentoria-apps
+    staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-vitrine
+    staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-vitrine
+  tags: [container-image, go]
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:staffops-mentoring
+  system: mentoria-apps
