@@ -8,6 +8,8 @@ metadata:
   description: "mentoria-apps (StaffOps-Mentoring)"
   annotations:
     github.com/project-slug: StaffOps-Mentoring/mentoria-apps
+    backstage.io/techdocs-ref: dir:.
+  tags: [go, docker, github-actions]
   links:
     - url: https://github.com/StaffOps-Mentoring/mentoria-apps
       title: Repository
@@ -26,6 +28,7 @@ metadata:
     github.com/project-slug: StaffOps-Mentoring/mentoria-apps
     staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-api
     staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-api
+    backstage.io/techdocs-ref: dir:.
   tags: [container-image, go]
 spec:
   type: service
@@ -43,6 +46,7 @@ metadata:
     github.com/project-slug: StaffOps-Mentoring/mentoria-apps
     staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-cofre
     staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-cofre
+    backstage.io/techdocs-ref: dir:.
   tags: [container-image, go]
 spec:
   type: service
@@ -60,7 +64,8 @@ metadata:
     github.com/project-slug: StaffOps-Mentoring/mentoria-apps
     staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-sonda
     staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-sonda
-  tags: [container-image, go]
+    backstage.io/techdocs-ref: dir:.
+  tags: [container-image, alpine, shell]
 spec:
   type: service
   lifecycle: experimental
@@ -77,6 +82,7 @@ metadata:
     github.com/project-slug: StaffOps-Mentoring/mentoria-apps
     staffops.space/image: ghcr.io/staffops-mentoring/mentoria-apps/staffops-vitrine
     staffops.space/dependency-track-project: ghcr.io/staffops-mentoring/mentoria-apps/staffops-vitrine
+    backstage.io/techdocs-ref: dir:.
   tags: [container-image, go]
 spec:
   type: service

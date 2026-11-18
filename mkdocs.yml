@@ -1,0 +1,10 @@
+site_name: "Mentoria Apps"
+site_description: "The mentoring lab apps that the docker, pipelines and kubernetes labs package, publish and run"
+repo_url: https://github.com/StaffOps-Mentoring/mentoria-apps
+edit_uri: edit/main/docs/
+
+nav:
+  - "Home": index.md
+
+plugins:
+  - techdocs-core
