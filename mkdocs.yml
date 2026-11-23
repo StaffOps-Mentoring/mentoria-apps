@@ -5,6 +5,7 @@ edit_uri: edit/main/docs/
 
 nav:
   - "Home": index.md
+  - "Handoff": handoff.md
 
 plugins:
   - techdocs-core
